@@ -40,3 +40,15 @@ jobs:
           healthcheck: "https://ci-pokedex.herokuapp.com/version"
           checkstring: "1"
           rollbackonhealthcheckfailed: true
+  tag_release:
+    if: ${{ github.event_name == 'push' }}
+    needs: [simple_ deployment_pipeline]
+    runs-on: ubuntu-20.04
+    steps:
+    - name: Bump version and push tag
+      uses: anothrNick/github-tag-action@1.36.0
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      with:
+        DEFAULT_BUMP: patch
+        DRY_RUN: true
