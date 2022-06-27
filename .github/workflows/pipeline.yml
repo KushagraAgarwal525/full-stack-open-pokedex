@@ -9,8 +9,9 @@ on:
     types: [opened, synchronize]
 
 permissions:
-  Actions: write
-  Contents: write
+  actions: write
+  deployments: write
+  contents: write
 
 jobs:
   simple_deployment_pipeline:
