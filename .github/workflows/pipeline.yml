@@ -9,7 +9,6 @@ on:
     types: [opened, synchronize]
 
 permissions:
-  actions: write
   contents: write
 
 jobs:
