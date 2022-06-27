@@ -11,7 +11,6 @@ on:
 permissions:
   actions: write
   deployments: write
-  id-token: write
 
 jobs:
   simple_deployment_pipeline:
