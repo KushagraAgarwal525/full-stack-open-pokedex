@@ -30,8 +30,7 @@ jobs:
           command: npm run test:e2e
           start: npm run start-prod
           wait-on: http://localhost:5000
-      - if: ${{ github.event_name == 'push' }}
-        if: ${{ !contains(join(toJson(github.event.commits.*.message)), '#skip') }}
+      - if: ${{ github.event_name == 'push' && !contains(join(toJson(github.event.commits.*.message)), '#skip') }}
         name: Deploy to Heroku
         uses: AkhileshNS/heroku-deploy@v3.12.12
         with:
@@ -42,8 +41,7 @@ jobs:
           checkstring: "1"
           rollbackonhealthcheckfailed: true
   tag_release:
-    if: ${{ github.event_name == 'push' }}
-    if: ${{ !contains(join(toJson(github.event.commits.*.message)), '#skip') }}
+    if: ${{ github.event_name == 'push' && !contains(join(toJson(github.event.commits.*.message)), '#skip') }}
     needs: [simple_deployment_pipeline]
     runs-on: ubuntu-20.04
     steps:
