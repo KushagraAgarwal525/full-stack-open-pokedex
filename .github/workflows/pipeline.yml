@@ -9,9 +9,9 @@ on:
     types: [opened, synchronize]
 
 permissions:
-  actions: write
-  deployments: write
-  id-token: write
+  Actions: write
+  Contents: write
+  Deployments: write
 
 jobs:
   simple_deployment_pipeline:
