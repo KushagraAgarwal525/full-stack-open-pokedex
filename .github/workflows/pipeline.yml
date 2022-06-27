@@ -8,7 +8,12 @@ on:
     branches: [master]
     types: [opened, synchronize]
 
-permissions: write-all
+permissions:
+  actions: write
+  checks: write
+  contents: write
+  deployments: write
+  id-token: write
 
 jobs:
   simple_deployment_pipeline:
