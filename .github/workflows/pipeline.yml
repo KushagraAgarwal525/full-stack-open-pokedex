@@ -45,10 +45,10 @@ jobs:
     needs: [simple_ deployment_pipeline]
     runs-on: ubuntu-20.04
     steps:
-    - name: Bump version and push tag
-      uses: anothrNick/github-tag-action@1.36.0
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      with:
-        DEFAULT_BUMP: patch
-        DRY_RUN: true
+      - name: Bump version and push tag
+        uses: anothrNick/github-tag-action@1.36.0
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          DEFAULT_BUMP: patch
+          DRY_RUN: true
