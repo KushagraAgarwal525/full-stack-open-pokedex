@@ -35,3 +35,4 @@ jobs:
           heroku_email: "kushagraagarwal525.ka@gmail.com"
           healthcheck: "https://ci-pokedex.herokuapp.com/version"
           checkstring: "1"
+          rollbackonhealthcheckfailed: true
