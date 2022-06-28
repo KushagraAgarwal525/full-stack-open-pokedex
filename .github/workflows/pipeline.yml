@@ -60,7 +60,7 @@ jobs:
         with:
           severity: info
           text: A new version of pokedex deployed
-          description: "to url https://ci-pokedex.herokuapp.com/ by ${{ github.context.payload.pusher.name }}"          
+          description: "to url https://ci-pokedex.herokuapp.com/ by ${{ toJson(github.context.payload) }}"          
           webhookUrl: ${{ secrets.DISCORD_WEBHOOK }}
       - name: Test error
         uses: rjstone/discord-webhook-notify@89b0bf43c2c8514f70d0dcba4a706b904e8a3112
