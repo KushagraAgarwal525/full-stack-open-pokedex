@@ -60,7 +60,7 @@ jobs:
         with:
           severity: info
           text: A new version of pokedex deployed.
-          description: ${{ env }}
+          description: ${{ toJson(env) }}
           details: test
       - name: Test error
         uses: rjstone/discord-webhook-notify@89b0bf43c2c8514f70d0dcba4a706b904e8a3112
