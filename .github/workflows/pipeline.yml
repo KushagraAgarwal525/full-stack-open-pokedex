@@ -60,7 +60,7 @@ jobs:
         with:
           severity: info
           text: A new version of pokedex deployed.
-          description: ${{ 'to url https://ci-pokedex.herokuapp.com/ by'.concat(github.context.payload.head_commit.author.name) }}
+          description: "to url https://ci-pokedex.herokuapp.com/ by {{ github.context.payload.head_commit.author.name }}"          
           webhookUrl: ${{ secrets.DISCORD_WEBHOOK }}
       - name: Test error
         uses: rjstone/discord-webhook-notify@89b0bf43c2c8514f70d0dcba4a706b904e8a3112
@@ -69,6 +69,6 @@ jobs:
           severity: error
           text: Build failed
           description: commit
-          details: ${{ github.context.payload.head_commit.url.concat(' by ').concat(github.context.payload.head_commit.author.name).concat(' broke the build :(') }}
+          details: "{{ github.context.payload.head_commit.url }} by {{ github.context.payload.head_commit.author.name }} broke the build :("
           webhookUrl: ${{ secrets.DISCORD_WEBHOOK }}
 
