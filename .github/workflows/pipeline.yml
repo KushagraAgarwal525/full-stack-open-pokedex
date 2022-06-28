@@ -57,16 +57,16 @@ jobs:
       - name: Test success
         uses: rjstone/discord-webhook-notify@v1.0.4
         if: success()
-        env:
-          PUSHER_NAME: ${{ github.pusher.name }}
+        # env:
+        #   PUSHER_NAME: ${{github.pusher.name}}
         with:
           severity: info
           text: A new version of pokedex deployed
-          description: ${{ 'to url https://ci-pokedex.herokuapp.com/ by'.concat('$PUSHER_NAME') }}
+          description: "to url https://ci-pokedex.herokuapp.com/ by ${{ toJson(github) }}"          
           webhookUrl: ${{ secrets.DISCORD_WEBHOOK }}
       - name: Test error
         uses: rjstone/discord-webhook-notify@89b0bf43c2c8514f70d0dcba4a706b904e8a3112
-        if: failure() ssss
+        if: failure() 
         with:
           severity: error
           text: Build failed
