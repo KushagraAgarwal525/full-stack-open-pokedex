@@ -2,7 +2,7 @@
 
 This repository is used for the CI/CD module of the Full stack open course
 
-My own pipeline :- ttps://github.com/KushagraAgarwal525/phonebook/
+My own pipeline :- https://github.com/KushagraAgarwal525/phonebook/
 
 ## Commands
 
