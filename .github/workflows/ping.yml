@@ -2,7 +2,7 @@ name: Periodic ping
 
 on:
   schedule:
-    - cron: '7 9 * * *'
+    - cron: '10 * * * *'
 
 jobs:
   ping:
