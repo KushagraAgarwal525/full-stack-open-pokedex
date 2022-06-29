@@ -9,8 +9,7 @@ jobs:
   ping:
     runs-on:  ubuntu-20.04
     steps:
-      steps:
-        - name: Check the deployed service URL
-          uses: jtalk/url-health-check-action@v2
-          with:            
-            url: "https://ci-pokedex.herokuapp.com/version"
+      - name: Check the deployed service URL
+        uses: jtalk/url-health-check-action@v2
+        with:            
+          url: "https://ci-pokedex.herokuapp.com/version"
